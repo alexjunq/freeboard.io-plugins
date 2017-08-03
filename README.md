@@ -9,7 +9,7 @@ Konker Plugins for Freeboard.io
 
 1. Create new freeboard
 2. On the bottom right click "DEVELOPER CONSOLE"
-3. Add this link https://raw.githubusercontent.com/KonkerLabs/freeboard.io-plugins/master/datasources/plugin-konker-api.js
+3. Add this link https://konkerlabs.github.io/freeboard.io-plugins/datasources/plugin-konker-api-v1.js
 4. Create a new datasource, the Konker API plugin should now be available.
 
 ## License and Copyright
