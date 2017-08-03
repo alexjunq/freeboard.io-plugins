@@ -31,7 +31,7 @@
                     "name"          : "host",
                     "display_name"  : "URL",
                     "type"          : "text",
-                    "default_value" : "http://localhost:8080",
+                    "default_value" : "https://demo.konkerlabs.net",
                     "description"   : "API URL",
                     "required"      : true
                 }, {
