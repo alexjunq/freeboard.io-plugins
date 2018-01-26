@@ -134,7 +134,7 @@
         "external_scripts" : [
             "https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.js",
             "https://code.getmdl.io/1.2.1/material.min.js",
-            "./plugins/konker/water-tank.js"
+            "https://alexjunq.github.io/freeboard.io-plugins/widgets/water-tank.js"
         ],
         settings: [
             {
