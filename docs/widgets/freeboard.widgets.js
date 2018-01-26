@@ -106,8 +106,8 @@
         }
 
         this.onCalculatedValueChanged = function (settingName, newValue) {
-            gaugeObject.updateLookupTableValue(self.calculateAvaliableLiters(newValue));
-            gaugeObject.updateHeight(self.calculateUsage(newValue));
+            gaugeObject.updateLookupTableValue(self.calculateAvaliableLiters(Number(newValue)));
+            gaugeObject.updateHeight(self.calculateUsage(Number(newValue)));
 /*
             console.log("udpate value for " + settingName);
             if (settingName == "value") {
