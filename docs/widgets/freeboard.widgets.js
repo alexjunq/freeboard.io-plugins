@@ -185,6 +185,7 @@
                 name "tank_type",
                 display_name: "Tank Type",
                 type: "option",
+                default_value: "tower",
                 options: [
                     {
                         name: "Tower",
