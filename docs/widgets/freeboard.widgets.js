@@ -124,7 +124,7 @@
 
         this.calculateUsage = function (measure) {
             distance = measure
-            tank_high = currentSettings.tank_high
+            tank_high = currentSettings.tank_height
             water_high = currentSettings.tank_water_height
 
             h_usage = distance - (tank_high - water_high)
@@ -135,7 +135,7 @@
 
         this.calculateAvaliableLiters = function(measure) {
             distance = measure
-            tank_high = currentSettings.tank_high
+            tank_high = currentSettings.tank_height
             water_high = currentSettings.tank_water_height
             tank_diameter = currentSettings.tank_diameter
 
