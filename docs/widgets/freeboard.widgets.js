@@ -26,6 +26,10 @@
 
         var currentSettings = settings;
 
+        if (settings.tank_type == null) {
+            currentSettings.tank_type = 'tower';
+        }
+
         var thresholds = [
           {
             name: 'Alarm High',
@@ -43,7 +47,7 @@
 
 
         var options = {
-          tankType: settings.tank_type,
+          tankType: currentSettings.tank_type,
           fillValue: 55,
           fillUnit: "%",
           supportLabelPadding: 5,
@@ -200,11 +204,6 @@
             {
                 name: "value",
                 display_name: "Value",
-                type: "calculated"
-            },
-            {
-                name: "total",
-                display_name: "Total",
                 type: "calculated"
             },
             {
