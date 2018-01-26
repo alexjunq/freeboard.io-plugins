@@ -45,7 +45,7 @@
         var options = {
           tankType: 'tower',
           fillValue: 55,
-          fillUnit: "",
+          fillUnit: "%",
           supportLabelPadding: 5,
           frontFontColor: "#003B42",
           thresholds: thresholds,
@@ -106,7 +106,13 @@
         }
 
         this.onCalculatedValueChanged = function (settingName, newValue) {
-            self.refresh(Number(newValue));
+            console.log("udpate value for " + settingName);
+            if (settingName == "value") {
+                self.refresh(Number(newValue));
+            }
+            if (settingName == "total") {
+                gaugeObject.updateLookupTableValue(newValue);
+            }
 /*            if (!_.isUndefined(gaugeObject)) {
                 gaugeObject.refresh(Number(newValue));
             }
@@ -145,6 +151,11 @@
             {
                 name: "value",
                 display_name: "Value",
+                type: "calculated"
+            },
+            {
+                name: "total",
+                display_name: "Total",
                 type: "calculated"
             },
             {
