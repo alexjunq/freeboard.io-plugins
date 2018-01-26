@@ -43,7 +43,7 @@
 
 
         var options = {
-          tankType: 'tower',
+          tankType: settings.tank_type,
           fillValue: 55,
           fillUnit: "%",
           supportLabelPadding: 5,
@@ -94,7 +94,10 @@
         }
 
         this.onSettingsChanged = function (newSettings) {
-            if (newSettings.min_value != currentSettings.min_value || newSettings.max_value != currentSettings.max_value || newSettings.units != currentSettings.units) {
+            if (newSettings.min_value != currentSettings.min_value || 
+                    newSettings.max_value != currentSettings.max_value || 
+                    newSettings.units != currentSettings.units || 
+                    newSettings.tank_type != currentSettings.tank_type) {
                 currentSettings = newSettings;
                 createGauge();
             }
@@ -177,6 +180,21 @@
                 name: "title",
                 display_name: "Title",
                 type: "text"
+            },
+            {
+                name "tank_type",
+                display_name: "Tank Type",
+                type: "option",
+                options: [
+                    {
+                        name: "Tower",
+                        value: "tower"
+                    },
+                    {
+                        name: "Round",
+                        value: "round"
+                    }
+                ]
             },
             {
                 name: "value",
