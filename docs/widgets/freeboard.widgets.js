@@ -106,6 +106,9 @@
         }
 
         this.onCalculatedValueChanged = function (settingName, newValue) {
+            gaugeObject.updateLookupTableValue(self.calculateAvaliableLiters(newValue));
+            gaugeObject.updateHeight(self.calculateUsage(newValue));
+/*
             console.log("udpate value for " + settingName);
             if (settingName == "value") {
                 self.refresh(Number(newValue));
@@ -113,10 +116,37 @@
             if (settingName == "total") {
                 gaugeObject.updateLookupTableValue(newValue);
             }
-/*            if (!_.isUndefined(gaugeObject)) {
+            if (!_.isUndefined(gaugeObject)) {
                 gaugeObject.refresh(Number(newValue));
             }
 */
+        }
+
+        this.calculateUsage = function (measure) {
+            distance = measure
+            tank_high = currentSettings.tank_high
+            water_high = currentSettings.tank_water_height
+
+            h_usage = distance - (tank_high - water_high)
+            usage = 1 - h_usage/water_high
+
+            return (usage*100)
+        }
+
+        this.calculateAvaliableLiters = function(measure) {
+            distance = measure
+            tank_high = currentSettings.tank_high
+            water_high = currentSettings.tank_water_height
+            tank_diameter = currentSettings.tank_diameter
+
+
+            h_usage = distance - (tank_high - water_high)
+            usage = 1 - h_usage/water_high
+
+            radius = (float(tank_diameter)/2)
+            usable_liters = radius*radius*3.1415926*water_high*(usage)/1000
+
+            return (usable_liters)
         }
 
         this.onDispose = function () {
@@ -162,6 +192,24 @@
                 name: "units",
                 display_name: "Units",
                 type: "text"
+            },
+            {
+                name: "tank_height",
+                display_name: "Tank Height",
+                type: "text",
+                default_value: 100
+            },
+            {
+                name: "tank_water_height",
+                display_name: "Tank Water Max Height",
+                type: "text",
+                default_value: 0
+            },
+            {
+                name: "tank_diameter",
+                display_name: "Tank Diameter",
+                type: "text",
+                default_value: 0
             },
             {
                 name: "min_value",
