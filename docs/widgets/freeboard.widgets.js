@@ -143,7 +143,7 @@
             h_usage = distance - (tank_high - water_high)
             usage = 1 - h_usage/water_high
 
-            radius = (float(tank_diameter)/2)
+            radius = tank_diameter/2
             usable_liters = radius*radius*3.1415926*water_high*(usage)/1000
 
             return (usable_liters)
