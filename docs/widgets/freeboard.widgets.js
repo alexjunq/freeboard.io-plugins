@@ -182,7 +182,7 @@
                 type: "text"
             },
             {
-                name "tank_type",
+                name: "tank_type",
                 display_name: "Tank Type",
                 type: "option",
                 default_value: "tower",
